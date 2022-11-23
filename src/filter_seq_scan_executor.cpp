@@ -12,12 +12,11 @@ bool FilterSeqScanExecutor::Next(Tuple *tuple) {
     while(iter_ != table_ -> End()){
         const Tuple &curr_tuple = *iter_;
         *tuple = Tuple(curr_tuple);
-        
+        ++iter_;        
+
         if(pred_ -> evaluate(*tuple)){
             return true;
         }
-
-        ++iter_;
     }
 
     return false; 
