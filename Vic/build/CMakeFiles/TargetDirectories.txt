@@ -1,0 +1,10 @@
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/build/CMakeFiles/rebuild_cache.dir
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/build/CMakeFiles/edit_cache.dir
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/build/CMakeFiles/complex-test.dir
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/build/CMakeFiles/hash-join-test.dir
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/build/CMakeFiles/nested-loop-join-test.dir
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/build/CMakeFiles/filter-seq-scan-test.dir
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/build/CMakeFiles/seq-scan-test.dir
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/build/src/CMakeFiles/edit_cache.dir
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/build/src/CMakeFiles/rebuild_cache.dir
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/build/src/CMakeFiles/EXECUTOR.dir

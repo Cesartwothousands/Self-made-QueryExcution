@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/include/abstract_executor.h
+storage.h
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/include/storage.h
+
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/include/nested_loop_join_executor.h
+vector
+-
+abstract_executor.h
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/include/abstract_executor.h
+storage.h
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/include/storage.h
+
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/include/seq_scan_executor.h
+vector
+-
+abstract_executor.h
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/include/abstract_executor.h
+storage.h
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/include/storage.h
+
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/include/storage.h
+string
+-
+vector
+-
+
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/test/nested_loop_join_test.cpp
+iostream
+-
+string
+-
+vector
+-
+../include/nested_loop_join_executor.h
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/include/nested_loop_join_executor.h
+../include/seq_scan_executor.h
+/common/home/zc366/Documents/CS539_A2/Query_Excution/Vic/include/seq_scan_executor.h
+
