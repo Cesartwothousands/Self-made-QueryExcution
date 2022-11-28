@@ -19,14 +19,19 @@ void HashJoinExecutor::Init(){
 };
 
 bool HashJoinExecutor::Next(Tuple *tuple) {
-    while (right_ -> Next(tuple)){
-        Tuple right_tuple = *tuple;
+    if(arraynum < array.size()){
+        *tuple = array[arraynum];
+        arraynum++;
+        return true;
+    }
+    
+    Tuple t;
+    while (right_ -> Next(&t)){
 
-        auto *vi = new std::vector<Tuple>();
-        
-        ht.GetValue(hash_fn_->GetHash(right_tuple), vi);
-        if (!vi->empty()){
-            delete vi;
+        ht.GetValue(hash_fn_->GetHash(t), &(this ->array));
+        if (array.size()>0){
+            *tuple = array[0];
+            arraynum = 1;
             return true;
         }
     }
