@@ -2,9 +2,7 @@
 
 SeqScanExecutor::SeqScanExecutor(Table *table) : table_(table){};
 
-void SeqScanExecutor::Init() { 
-  iter_ = table_->Begin(); 
-}
+void SeqScanExecutor::Init() { iter_ = table_->Begin(); }
 
 bool SeqScanExecutor::Next(Tuple *tuple) {
   if (iter_ != table_->End()) {

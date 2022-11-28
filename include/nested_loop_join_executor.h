@@ -17,7 +17,7 @@ class NestedLoopJoinExecutor : public AbstractExecutor {
    * @param right_child_executor the right child, used by convention to probe
    * the hash table
    * @param join_key specify which attribute we should use to join. It must be
-   * one of the {"id","val1","val2"}; Don't foget to check the join_key.
+   * one of the {"id","val1","val2"}; Don't forget to check the join_key.
    */
   NestedLoopJoinExecutor(AbstractExecutor *left_child_executor,
                          AbstractExecutor *right_child_executor,
@@ -37,4 +37,5 @@ class NestedLoopJoinExecutor : public AbstractExecutor {
   AbstractExecutor *left_;
   AbstractExecutor *right_;
   std::string join_key_;
+  bool join_helper(const Tuple &left, const Tuple &right);
 };

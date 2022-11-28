@@ -35,7 +35,7 @@ class SimpleHashFunction {
     return 0;
   };
 
-  // calculate the hash for a intger type value
+  // calculate the hash for a integer type value
   // refer from
   // https://stackoverflow.com/a/12996028/5862966
   hash_t int2hash(int key) {
