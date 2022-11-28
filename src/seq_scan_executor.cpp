@@ -5,7 +5,7 @@ SeqScanExecutor::SeqScanExecutor(Table *table) : table_(table){};
 void SeqScanExecutor::Init() { iter_ = table_->Begin(); }
 
 bool SeqScanExecutor::Next(Tuple *tuple) {
-  while (iter_ != table_->End()) {
+  if (iter_ != table_->End()) {
     const Tuple &curr_tuple = *iter_;
     *tuple = Tuple(curr_tuple);
     ++iter_;
