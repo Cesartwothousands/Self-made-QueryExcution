@@ -1,4 +1,8 @@
+mkdir build
 cd build
+cmake ..
+make
+
 echo -e "\nseq-scan-test:"
 ./seq-scan-test
 echo -e "\nfilter-seq-scan-test:"

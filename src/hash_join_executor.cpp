@@ -8,18 +8,20 @@ HashJoinExecutor::HashJoinExecutor(AbstractExecutor *left_child_executor,
       hash_fn_(hash_fn) {}
 
 void HashJoinExecutor::Init(){
-    left_->Init();
-    right_->Init();
+    left_ -> Init();
+    right_ -> Init();
     Tuple tuple;
-    while (left_->Next(&tuple)){
-        hash_t hash_val = hash_fn_->GetHash(tuple);
-        ht.Insert(hash_val, tuple);
+
+    while (left_ -> Next(&tuple)){
+        hash_t Value = hash_fn_ -> GetHash(tuple);
+        ht.Insert(Value, tuple);
     }
 };
 
 bool HashJoinExecutor::Next(Tuple *tuple) {
-    while (right_->Next(tuple)){
+    while (right_ -> Next(tuple)){
         Tuple right_tuple = *tuple;
+
         auto *vi = new std::vector<Tuple>();
         
         ht.GetValue(hash_fn_->GetHash(right_tuple), vi);
@@ -28,5 +30,6 @@ bool HashJoinExecutor::Next(Tuple *tuple) {
             return true;
         }
     }
+    
     return false;
 }
