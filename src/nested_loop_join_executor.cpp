@@ -11,24 +11,30 @@ void NestedLoopJoinExecutor::Init() {
     left_->Init();
 }
 
-bool NestedLoopJoinExecutor::join_helper(const Tuple &left, const Tuple &right) {
-    if (join_key_ == "val1"){
-        return left.val1 == right.val1;
-    } else if (join_key_ == "val2"){
-        return left.val2 == right.val2;
-    }
-    return left.id == right.id;
-}
-
 bool NestedLoopJoinExecutor::Next(Tuple *tuple) {
     while (left_->Next(tuple)){
         Tuple left_tuple = *tuple;
         right_->Init();
+
         while(right_->Next(tuple)){
             Tuple right_tuple = *tuple;
-            if (join_helper(left_tuple, right_tuple)){
-                return true;
+            
+            bool j = false;
+            if (join_key_ == "val1"){
+                if(left_tuple.val1 == right_tuple.val1){
+                    j = true;
+                }
+            }else if (join_key_ == "val2"){
+                if(left_tuple.val2 == right_tuple.val2){
+                    j = true;
+                }
+            }else if (join_key_ == "id"){
+                if(left_tuple.id == right_tuple.id){
+                    j = true;
+                }
             }
+
+            if(j){return true;}
         }
     }
     return false;

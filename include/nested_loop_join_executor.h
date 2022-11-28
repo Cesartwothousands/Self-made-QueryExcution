@@ -37,5 +37,5 @@ class NestedLoopJoinExecutor : public AbstractExecutor {
   AbstractExecutor *left_;
   AbstractExecutor *right_;
   std::string join_key_;
-  bool join_helper(const Tuple &left, const Tuple &right);
+  
 };
