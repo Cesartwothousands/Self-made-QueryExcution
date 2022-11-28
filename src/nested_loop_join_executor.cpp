@@ -19,16 +19,19 @@ bool NestedLoopJoinExecutor::join_helper(const Tuple &left, const Tuple &right) 
 }
 
 bool NestedLoopJoinExecutor::Next(Tuple *tuple) {
-    while (right_->Next(tuple)){
+    while (right_ -> Next(tuple)){
         Tuple right_tuple = *tuple;
-        left_->Init();
-        while(left_->Next(tuple)){
+        left_ -> Init();
+
+        while(left_ -> Next(tuple)){
             Tuple left_tuple = *tuple;
+
             if (join_helper(left_tuple, right_tuple)){
                 return true;
             }
         }
     }
+
     return false;
 }
 

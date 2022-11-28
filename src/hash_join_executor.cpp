@@ -12,16 +12,18 @@ void HashJoinExecutor::Init(){
     right_->Init();
     Tuple tuple;
     while (right_->Next(&tuple)){
-        hash_t hash_val = hash_fn_->GetHash(tuple);
+        hash_t hash_val = hash_fn_-> GetHash(tuple);
         ht.Insert(hash_val, tuple);
     }
 };
 
 bool HashJoinExecutor::Next(Tuple *tuple) {
-    while (left_->Next(tuple)){
+    while (left_ -> Next(tuple)){
         Tuple left_tuple = *tuple;
+        //Why
         auto *vi = new std::vector<Tuple>();
         ht.GetValue(hash_fn_->GetHash(left_tuple), vi);
+
         if (!vi->empty()){
             delete vi;
             return true;
