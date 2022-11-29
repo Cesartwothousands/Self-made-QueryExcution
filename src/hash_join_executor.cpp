@@ -15,18 +15,21 @@ void HashJoinExecutor::Init(){
         hash_t Value = hash_fn_ -> GetHash(t);
         ht.Insert(Value, t);
     }
+
     right_ -> Init();
 
     if (array.empty()){
         Tuple right_tuple;
+
         while (right_->Next(&right_tuple)){
             std::vector<Tuple> Value1;
             ht.GetValue(hash_fn_->GetHash(right_tuple), &Value1);
-            for (const Tuple& left_iter : Value1){
+            for (const Tuple &left_iter : Value1){
                 array.emplace_back(left_iter);
             }
         }
     }
+    
     iter_ = array.begin();
 };
 

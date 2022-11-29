@@ -37,18 +37,9 @@ void NestedLoopJoinExecutor::Init() {
             }
         }
     }
+
     iter_ = array.begin();
 }
-
-bool NestedLoopJoinExecutor::join_helper(const Tuple &left, const Tuple &right) {
-    if (join_key_ == "val1"){
-        return left.val1 == right.val1;
-    } else if (join_key_ == "val2"){
-        return left.val2 == right.val2;
-    }
-    return left.id == right.id;
-}
-
 
 bool NestedLoopJoinExecutor::Next(Tuple *tuple) {
     if (iter_ != array.end()) {
