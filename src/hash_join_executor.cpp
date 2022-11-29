@@ -9,11 +9,12 @@ HashJoinExecutor::HashJoinExecutor(AbstractExecutor *left_child_executor,
 
 void HashJoinExecutor::Init(){
     left_ -> Init();
-    Tuple left_tuple;
+    Tuple t;
 
-    while (left_ -> Next(&left_tuple)){
-        hash_t Value = hash_fn_ -> GetHash(left_tuple);
-        ht.Insert(Value, left_tuple);
+    while (left_ -> Next(&t)){
+        Tuple toInsert = Tuple(t);
+        hash_t Value = hash_fn_ -> GetHash(toInsert);
+        ht.Insert(Value, toInsert);
     }
     right_ -> Init();
 };
