@@ -90,57 +90,8 @@ int main() {
 
     Tuple tuple;
 
-    scan1.Init();
-    cout << "Scan Function 1:\n";
-    while (scan1.Next(&tuple)) {
-        cout << "Successfully get tuple! id: " << tuple.id << " val1: " << tuple.val1 << " val2: " << tuple.val2 << endl;
-    }
-    cout << "\n";
-
-    scan2.Init();
-    cout << "Scan Function 2:\n";
-    while (scan2.Next(&tuple)) {
-        cout << "Successfully get tuple! id: " << tuple.id << " val1: " << tuple.val1 << " val2: " << tuple.val2 << endl;
-    }
-    cout << "\n";
-
-    scan3.Init();
-    cout << "Scan Function 3:\n";
-    while (scan3.Next(&tuple)) {
-        cout << "Successfully get tuple! id: " << tuple.id << " val1: " << tuple.val1 << " val2: " << tuple.val2 << endl;
-    }
-    cout << "\n";
-
-    scan4.Init();
-    cout << "Scan Function 4:\n";
-    while (scan4.Next(&tuple)) {
-        cout << "Successfully get tuple! id: " << tuple.id << " val1: " << tuple.val1 << " val2: " << tuple.val2 << endl;
-    }
-    cout << "\n";
-
-    hash1.Init();
-    cout << "Hash Function 1:\n";
-    while (hash1.Next(&tuple)) {
-        cout << "Successfully get tuple! id: " << tuple.id << " val1: " << tuple.val1 << " val2: " << tuple.val2 << endl;
-    }
-    cout << "\n";
-
-    hash2.Init();
-    cout << "Hash Function 2:\n";
-    while (hash2.Next(&tuple)) {
-        cout << "Successfully get tuple! id: " << tuple.id << " val1: " << tuple.val1 << " val2: " << tuple.val2 << endl;
-    }
-    cout << "\n";
-
+    
     executor.Init();
-    cout << "Output:\n";
-    while (executor.Next(&tuple)) {
-        cout << "Successfully get tuple! id: " << tuple.id << " val1: " << tuple.val1 << " val2: " << tuple.val2 << endl;
-    }
-
-    /*executor.Init();
-
-    Tuple tuple;
 
     while (executor.Next(&tuple)) {
 
@@ -150,6 +101,6 @@ int main() {
 
     }
 
-    return 0;*/
+    return 0;
 
 }
