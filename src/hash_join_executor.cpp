@@ -39,24 +39,3 @@ bool HashJoinExecutor::Next(Tuple *tuple) {
     }
     return false;
 }
-/*
-bool HashJoinExecutor::Next(Tuple *tuple) {
-    if(arraynum < array.size()){
-        *tuple = array[arraynum];
-        arraynum++;
-        return true;
-    }
-    
-    Tuple t;
-    while (right_ -> Next(&t)){
-
-        ht.GetValue(hash_fn_->GetHash(t), &(this ->array));
-        if (array.size()>0){
-            *tuple = array[0];
-            arraynum = 1;
-            return true;
-        }
-    }
-    
-    return false;
-}*/

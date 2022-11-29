@@ -34,8 +34,6 @@ void NestedLoopJoinExecutor::Init() {
                 }
 
                 if(j){array.emplace_back(left_tuple);}
-
-                
             }
         }
     }
@@ -61,33 +59,3 @@ bool NestedLoopJoinExecutor::Next(Tuple *tuple) {
     }
     return false;
 }
-/*
-bool NestedLoopJoinExecutor::Next(Tuple *tuple) {
-    while (left_->Next(tuple)){
-        Tuple left_tuple = *tuple;
-        right_->Init();
-
-        while(right_->Next(tuple)){
-            Tuple right_tuple = *tuple;
-            
-            bool j = false;
-            if (join_key_ == "val1"){
-                if(left_tuple.val1 == right_tuple.val1){
-                    j = true;
-                }
-            }else if (join_key_ == "val2"){
-                if(left_tuple.val2 == right_tuple.val2){
-                    j = true;
-                }
-            }else if (join_key_ == "id"){
-                if(left_tuple.id == right_tuple.id){
-                    j = true;
-                }
-            }
-
-            if(j){return true;}
-        }
-    }
-    return false;
-}*/
-
