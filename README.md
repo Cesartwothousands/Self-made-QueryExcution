@@ -10,6 +10,8 @@ Implement executors that are responsible for taking query plans and executing th
 
 In order to respect our university's academic integrity policy and copyright of professor. I have decided not to show code of tests, including the specific requirements of this assignment.
 
+The copyright of related header files belongs to Carnegie Mellon University Database Group, and part of header files are vv from stackoverflow blogs.
+
 ## Tests
 
 Create executors that perform sequential scans, hash joins and aggregations. Here are output of my code.
